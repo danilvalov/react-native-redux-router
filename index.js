@@ -143,7 +143,7 @@ class Router extends React.Component {
 
         if (page.mode==RESET){
             // reset navigation stack
-            this.refs.nav.immediatelyResetRouteStack([this.getRoute(this.routes[page.initial], {})])
+            this.refs.nav.resetTo(this.getRoute(this.routes[page.currentRoute], page.data))
         }
     }
 

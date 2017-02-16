@@ -54,10 +54,11 @@ export default function reducer(state = { routes: [], currentRoute: null}, actio
             };
         case RESET:
             return {
+                data: action.data || null,
                 mode: RESET,
-                routes: [action.initial],
-                initial: action.initial
-            }
+                routes: [action.name],
+                currentRoute: action.name
+            };
 
         default:
             return state;

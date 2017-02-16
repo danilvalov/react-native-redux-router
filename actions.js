@@ -46,12 +46,9 @@ let CoreActions = {
         }
     },
 
-    reset: function(initial) {
-        if (!initial) {
-            throw new Error("Param should be non-empty");
-        }
+    reset: function(data) {
         return {
-            initial,
+            ... filterParam(data),
             type: RESET
         }
     },
